@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilham Maulana — Portfolio</title>
+  <meta name="description"
+    content="Portfolio Ilham Maulana, Mahasiswa Sistem Informasi Universitas Pamulang, Serpong, Tangerang Selatan." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Ilham<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#hero">🏠 Home</a>
+    <a href="#about">👤 About</a>
+    <a href="#skills">⚡ Skills</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#projects">💼 Projects</a>
+    <a href="#certificates">🏆 Certificates</a>
+    <a href="#contact">📬 Contact</a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Halo, Saya <span id="typewriter" class="typewriter"></span>
+      </h1>
+      <p class="hero-sub">Mahasiswa Aktif · Universitas Pamulang · Sistem Informasi</p>
+      <p class="hero-location">📍 Serpong, <span>Tangerang Selatan</span></p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">Lihat Proyek</a>
+        <a href="#contact" class="btn-outline">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="scroll-arrow">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Tentang <span>Saya</span></h2>
+      <div class="section-line"></div>
+      <div class="about-grid">
+        <div class="profile-wrap reveal">
+          <div class="profile-img-wrap">
+            <img src="assets/img/profile.png" alt="Ilham Maulana" class="profile-img" />
+            <div class="glow-ring"></div>
+            <div class="glow-ring-2"></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="about-bio">
+            Halo! Saya <strong>Ilham Maulana</strong>, lahir di <strong>Tangerang</strong> pada <strong>09 April
+              2005</strong>.
+            Saat ini saya tinggal di <strong>Serpong, Tangerang Selatan</strong> dan merupakan mahasiswa aktif
+            <strong>Semester 6</strong> di <strong>Universitas Pamulang (UNPAM)</strong> program studi
+            <strong>Sistem Informasi</strong>.
+          </p>
+          <p class="about-bio">
+            Saya memiliki passion di bidang pengembangan web dan teknologi informasi. Selalu antusias belajar
+            teknologi baru dan mengerjakan proyek-proyek inovatif yang memberikan solusi nyata.
+          </p>
+          <div class="fun-facts">
+            <span class="chip">⚡ Fast Learner</span>
+            <span class="chip">🎯 Detail Oriented</span>
+            <span class="chip">💡 Creative</span>
+            <span class="chip">🤝 Team Player</span>
+            <span class="chip">🚀 Problem Solver</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Tech <span>Stack</span></h2>
+      <div class="section-line"></div>
+      <div class="tech-stack-grid">
+        <div class="tech-card reveal" data-tech="html5" style="cursor: pointer;" title="Klik untuk detail HTML5">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+          <span>HTML5</span>
+        </div>
+        <div class="tech-card reveal" data-tech="css3" style="cursor: pointer;" title="Klik untuk detail CSS3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+          <span>CSS3</span>
+        </div>
+        <div class="tech-card reveal" data-tech="javascript" style="cursor: pointer;"
+          title="Klik untuk detail JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript" />
+          <span>JavaScript</span>
+        </div>
+        <div class="tech-card reveal" data-tech="tailwindcss" style="cursor: pointer;"
+          title="Klik untuk detail Tailwind CSS">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            alt="Tailwind CSS" />
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="tech-card reveal" data-tech="php" style="cursor: pointer;" title="Klik untuk detail PHP">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+          <span>PHP</span>
+        </div>
+        <div class="tech-card reveal" data-tech="laravel" style="cursor: pointer;" title="Klik untuk detail Laravel">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+          <span>Laravel</span>
+        </div>
+        <div class="tech-card reveal" data-tech="mysql" style="cursor: pointer;" title="Klik untuk detail MySQL">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+          <span>MySQL</span>
+        </div>
+        <div class="tech-card reveal" data-tech="codeigniter" style="cursor: pointer;"
+          title="Klik untuk detail CodeIgniter">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
+            alt="CodeIgniter" />
+          <span>CodeIgniter</span>
+        </div>
+        <div class="tech-card reveal" data-tech="git" style="cursor: pointer;" title="Klik untuk detail Git">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+          <span>Git</span>
+        </div>
+        <div class="tech-card reveal" data-tech="figma" style="cursor: pointer;" title="Klik untuk detail Figma">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+          <span>Figma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Riwayat <span>Pendidikan</span></h2>
+      <div class="section-line"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2023 — Sekarang</div>
+            <div class="timeline-school">Universitas Pamulang (UNPAM)</div>
+            <div class="timeline-major">S1 Sistem Informasi · Semester 6</div>
+            <span class="timeline-status">✅ Mahasiswa Aktif</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2020 — 2023</div>
+            <div class="timeline-school">SMK Widya Kusuma</div>
+            <div class="timeline-major">Teknik Komputer dan Jaringan · Cileungsi-Bogor</div>
+            <span class="timeline-status">🎓 Lulus</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2017 — 2020</div>
+            <div class="timeline-school">SMP Nuurushshibyan</div>
+            <div class="timeline-major">Cileungsi-Bogor</div>
+            <span class="timeline-status">🎓 Lulus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Proyek <span>Saya</span></h2>
+      <div class="section-line"></div>
+      <div class="filter-tabs">
+        <button class="proj-tab tab-btn active" data-filter="all">Semua</button>
+        <button class="proj-tab tab-btn" data-filter="web">Web</button>
+        <button class="proj-tab tab-btn" data-filter="mobile">Mobile</button>
+        <button class="proj-tab tab-btn" data-filter="design">Design</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <span class="project-thumb-emoji">📋</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Sistem Presensi (Presensiku)</div>
+            <div class="project-desc">Sistem absensi pegawai berbasis web menggunakan CodeIgniter 3 dengan fitur jadwal,
+              laporan, dan manajemen admin.</div>
+            <div class="project-tags">
+              <span class="tag">CodeIgniter</span><span class="tag">PHP</span><span class="tag">MySQL</span><span
+                class="tag">Bootstrap</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="btn-proj demo">Live Demo</a>
+              <button class="btn-proj detail btn-detail" data-id="presensiku">Details →</button>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <span class="project-thumb-emoji">🏗️</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Monitexa — Manajemen Konstruksi</div>
+            <div class="project-desc">Sistem manajemen proyek konstruksi berbasis Laravel dengan multi-role (Admin,
+              Manager, Teknisi, Client) dan tracking real-time.</div>
+            <div class="project-tags">
+              <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span
+                class="tag">Tailwind</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="btn-proj demo">Live Demo</a>
+              <button class="btn-proj detail btn-detail" data-id="monitexa">Details →</button>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <span class="project-thumb-emoji">💼</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Website Portofolio</div>
+            <div class="project-desc">Website portofolio personal modern dengan animasi particle, typewriter effect, dan
+              desain dark theme premium.</div>
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="btn-proj demo">Live Demo</a>
+              <button class="btn-proj detail btn-detail" data-id="portfolio">Details →</button>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="design">
+          <div class="project-thumb">
+            <span class="project-thumb-emoji">🎨</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">UI/UX Design System</div>
+            <div class="project-desc">Desain sistem antarmuka modern dengan komponen reusable, dark theme, dan panduan
+              tipografi untuk aplikasi web.</div>
+            <div class="project-tags">
+              <span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Design</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="btn-proj demo">Preview</a>
+              <button class="btn-proj detail btn-detail" data-id="design">Details →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="container">
+      <h2 class="section-title">Sertifikat <span>Saya</span></h2>
+      <div class="section-line"></div>
+      <div class="certificates-grid">
+        <div class="cert-card reveal">
+          <div class="cert-img-placeholder">
+            <img src="assets/img/NATISA.png" alt="Sertifikat NATISA" class="cert-actual-img">
+          </div>
+          <div class="cert-info">
+            <h3>Seminar Nasional NATISA</h3>
+            <p>Universitas Pamulang — 2024</p>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-img-placeholder">
+            <img src="assets/img/SEMNAS AI.png" alt="Sertifikat SEMNAS AI" class="cert-actual-img">
+          </div>
+          <div class="cert-info">
+            <h3>Seminar Nasional Artificial Intelligence</h3>
+            <p>Universitas Pamulang — 2024</p>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-img-placeholder">
+            <img src="assets/img/SEMNAS CYBER.png" alt="Sertifikat SEMNAS CYBER" class="cert-actual-img">
+          </div>
+          <div class="cert-info">
+            <h3>Seminar Nasional Cybersecurity</h3>
+            <p>Universitas Pamulang — 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-header text-center reveal">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <p class="contact-subtitle">Got a question? Send me a message, and I'll get back to you soon.</p>
+      </div>
+
+      <div class="contact-modern-grid">
+        <div class="contact-form-container reveal">
+          <form id="contactForm" class="contact-form-modern">
+            <div class="form-group-modern">
+              <span class="input-icon">👤</span>
+              <input type="text" id="nama" name="nama" placeholder="Your Name" />
+            </div>
+            <div class="form-group-modern">
+              <span class="input-icon">📧</span>
+              <input type="email" id="email" name="email" placeholder="Your Email" />
+            </div>
+            <div class="form-group-modern align-top">
+              <span class="input-icon">💬</span>
+              <textarea id="pesan" name="pesan" rows="4" placeholder="Your Message here..."></textarea>
+            </div>
+            <button type="submit" class="btn-send-modern">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-social-container reveal">
+          <h3 class="social-title"><span>—</span> Connect With Me</h3>
+          <div class="social-grid-modern">
+            <a href="#" class="social-btn">
+              <span class="icon" style="color: #0077b5;">🔗</span>
+              <div class="social-text">Let's Connect<br /><small>LinkedIn</small></div>
+            </a>
+            <a href="https://www.instagram.com/ilhmlna.fv/" target="_blank" class="social-btn">
+              <span class="icon" style="color: #E1306C;">📸</span>
+              <div class="social-text">Instagram<br /><small>@ilhmlna.fv</small></div>
+            </a>
+            <a href="https://github.com/ilhmlna9" target="_blank" class="social-btn">
+              <span class="icon" style="color: #fff;">🐙</span>
+              <div class="social-text">GitHub<br /><small>ilhmlna9</small></div>
+            </a>
+            <a href="mailto:ilham090405@gmail.com" class="social-btn">
+              <span class="icon" style="color: #ea4335;">📧</span>
+              <div class="social-text">Email<br /><small>ilham090405@gmail.com</small></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ilham<span>.</span></div>
+        <p style="color:var(--text-muted);font-size:0.8rem;margin-top:0.3rem">Ilham Maulana · Sistem Informasi UNPAM</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 Ilham Maulana<br />All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Kembali ke atas">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <div class="toast-container"></div>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-container">
+      <button class="modal-close" id="closeModal">✕</button>
+      <div class="modal-header">
+        <div class="modal-breadcrumb"><span id="modalBack" style="cursor:pointer">← Back</span> &nbsp;|&nbsp; <span
+            id="modalBreadcrumbText">Projects &nbsp;&gt;&nbsp; <span id="modalProjectName">Project</span></span></div>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Modal Content Here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // GANTI 'YOUR_PUBLIC_KEY' dengan Public Key dari akun EmailJS Anda
+      emailjs.init("bVqiubyacJZO6A3cQ");
+    })();
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
