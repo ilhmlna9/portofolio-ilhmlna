@@ -272,6 +272,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text-primary);
   border: 1px solid var(--border-card);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -315,8 +316,8 @@ header {
 #navbar.scrolled {
   padding: 0.85rem 0;
   background-color: rgba(7, 10, 15, 0.85);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
@@ -556,6 +557,7 @@ header {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   z-index: 1999;
   opacity: 0;
@@ -948,8 +950,8 @@ header {
 .id-card-frame {
   width: 300px;
   background: rgba(14, 21, 33, 0.92);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 20px;
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.12);
@@ -959,6 +961,7 @@ header {
   transform-style: preserve-3d;
   transform-origin: 50% 12px; /* PIVOTS AT THE HANGER CLIP HOLE! */
   transition: box-shadow 0.3s ease;
+  -webkit-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 6;
@@ -1761,6 +1764,7 @@ header {
   font-weight: 700;
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -1906,6 +1910,7 @@ header {
   position: absolute;
   inset: 0;
   background: rgba(7, 10, 15, 0.7);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -2276,8 +2281,8 @@ header {
   position: fixed;
   inset: 0;
   background: rgba(4, 7, 12, 0.88);
-  backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   z-index: 5000;
   display: flex;
   align-items: center;
@@ -2530,6 +2535,7 @@ header {
   pointer-events: none;
   transform: translateY(12px);
   transition: all var(--transition-normal);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -2657,13 +2663,23 @@ header {
 
   .nav-hamburger {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 38px;
     height: 38px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-subtle);
+    padding: 0;
+  }
+
+  .nav-hamburger span {
+    width: 18px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
   }
 
   .nav-container {
@@ -2694,7 +2710,7 @@ header {
   .hero-section {
     padding-top: 5.5rem;
     padding-bottom: 2.5rem;
-    min-height: auto;
+    min-height: 0;
   }
 
   .hero-container {
@@ -2760,46 +2776,66 @@ header {
     width: 100%;
   }
 
-  /* Hero Hanging Lanyard Rig on Mobile */
+  /* Hero Hanging Lanyard Rig on Mobile (100% visible, NEVER cut off) */
   .hero-lanyard-wrapper {
-    height: 440px;
+    height: 520px;
+    min-height: 520px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
-    margin: 0.5rem auto 1rem auto;
+    overflow: visible;
+    margin: 1rem auto 2.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .lanyard-strap {
+    height: 65px;
   }
 
   .id-card-frame {
-    width: 260px;
-    padding: 1.15rem 1rem 1rem 1rem;
+    width: 270px;
+    padding: 1.15rem 1rem 1.15rem 1rem;
     border-radius: 18px;
+    margin-top: -12px;
   }
 
   .card-photo-box {
-    width: 110px;
+    width: 115px;
     height: 135px;
   }
 
   .card-person-name {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
   }
 
   .card-person-role {
     font-size: 0.72rem;
+    margin-bottom: 0.65rem;
   }
 
   .card-spec-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
-    padding: 0.45rem 0.6rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    padding: 0.45rem 0.35rem;
   }
 
   .spec-cell .spec-k {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
   }
 
   .spec-cell .spec-v {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   /* About Section */
@@ -2951,8 +2987,6 @@ header {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 0.5rem;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
   }
 
   .project-filters::-webkit-scrollbar {
@@ -2976,7 +3010,7 @@ header {
 
   .project-showcase-card.featured-card {
     grid-template-columns: 1fr;
-    min-height: auto;
+    min-height: 0;
   }
 
   .featured-card .showcase-visual,
@@ -3226,6 +3260,27 @@ header {
 
 /* Extra Small Phones (<= 480px) */
 @media (max-width: 480px) {
+  .hero-lanyard-wrapper {
+    height: 500px;
+    min-height: 500px;
+    overflow: visible;
+    margin: 1rem auto 2rem auto;
+  }
+
+  .lanyard-strap {
+    height: 55px;
+  }
+
+  .id-card-frame {
+    width: 255px;
+    padding: 1.1rem 0.9rem 1rem 0.9rem;
+  }
+
+  .card-photo-box {
+    width: 105px;
+    height: 125px;
+  }
+
   .container {
     padding-left: 1.15rem;
     padding-right: 1.15rem;
@@ -3255,18 +3310,28 @@ header {
 
 /* Ultra-Compact Phones (<= 360px) */
 @media (max-width: 360px) {
+  .hero-lanyard-wrapper {
+    height: 470px;
+    min-height: 470px;
+    overflow: visible;
+  }
+
+  .lanyard-strap {
+    height: 45px;
+  }
+
   .tech-grid {
     grid-template-columns: 1fr;
   }
 
   .id-card-frame {
     width: 235px;
-    padding: 1rem 0.85rem;
+    padding: 0.9rem 0.8rem;
   }
 
   .card-photo-box {
     width: 95px;
-    height: 120px;
+    height: 115px;
   }
 }
 
