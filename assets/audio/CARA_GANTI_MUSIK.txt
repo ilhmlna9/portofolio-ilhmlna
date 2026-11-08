@@ -1,0 +1,18 @@
+====================================================================
+PANDUAN MENAMBAHKAN / MENGGANTI LAGU FAVORIT ANDA
+====================================================================
+
+Halo Ilham! Untuk mengganti musik di pemutar musik Spotify-style & musik latar website:
+
+1. Siapkan file musik MP3 favorit Anda.
+2. Beri nama file tersebut: 
+   music.mp3
+3. Simpan file tersebut tepat di dalam folder ini:
+   assets/audio/music.mp3
+
+CATATAN:
+- Jika file 'music.mp3' tersedia, website otomatis memutar musik favorit Anda!
+- Jika belum menambahkan file, website memiliki musik ambient atmosferik bawaan (Gotham Ambient) sehingga pemutar musik tetap dapat berbunyi dan dinikmati langsung.
+- Anda juga bisa menambahkan file lain seperti lagu1.mp3, lagu2.mp3 dan menghubungkannya di playlist player.
+====================================================================
+

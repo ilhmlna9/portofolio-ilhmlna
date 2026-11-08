@@ -2,21 +2,19 @@
 <html lang="id">
 
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9337069937115436"
-     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ilham Maulana — Information Systems &amp; Web Developer</title>
+  <title>Ilham Maulana — Modern Portfolio &amp; The Dark Knight</title>
   <meta name="description"
-    content="Personal portfolio of Ilham Maulana. Information Systems Student at Universitas Pamulang &amp; Web Developer specializing in clean, modern, and interactive digital experiences." />
+    content="Personal portfolio of Ilham Maulana. Information Systems Student at Universitas Pamulang &amp; Web Developer specializing in clean, modern, interactive digital experiences." />
   <meta name="keywords"
-    content="Ilham Maulana, Web Developer, Portfolio, Sistem Informasi, UNPAM, Laravel, CodeIgniter, Frontend, Backend" />
+    content="Ilham Maulana, Web Developer, Portfolio, Sistem Informasi, UNPAM, Laravel, CodeIgniter, Batman, Gotham Dark Mode, Interactive 3D" />
   <meta name="author" content="Ilham Maulana" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Ilham Maulana — Portfolio" />
+  <meta property="og:title" content="Ilham Maulana — Personal Portfolio" />
   <meta property="og:description"
-    content="Information Systems Student &amp; Web Developer. Explore selected projects, tech stack, and experience." />
+    content="Explore featured projects, tech stack, certifications, and interactive Gotham Dark Knight experience." />
   <meta property="og:type" content="website" />
 
   <!-- Google Fonts -->
@@ -29,48 +27,36 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
+<body class="theme-dark-gotham">
 
   <!-- Custom Cursor (Desktop only) -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- Ambient Particles & Subtle Glow -->
+  <!-- Ambient Particles, Gotham Starfield & Subtle Radar Glow -->
   <canvas id="particles"></canvas>
   <div class="cursor-ambient-glow" id="ambientGlow"></div>
+  <div class="bat-signal-ambient" id="batSignalAmbient"></div>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav id="navbar">
-      <div class="nav-container">
-        <a href="#hero" class="nav-logo" aria-label="Home">
-          <span class="logo-text">ILHAM</span><span class="logo-accent">.</span>
-        </a>
+  <!-- FLOATING CAPSULE ISLAND NAVBAR (Reference video style) -->
+  <header class="floating-header">
+    <nav class="floating-nav" id="floatingNav">
+      <div class="nav-capsule">
+        <!-- Sliding active indicator pill -->
+        <div class="nav-capsule-indicator" id="navIndicator"></div>
 
-        <ul class="nav-links">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Tech Stack</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#certificates" class="nav-link">Certificates</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+        <a href="#hero" class="capsule-link active" data-section="hero">Home</a>
+        <a href="#about" class="capsule-link" data-section="about">About</a>
+        <a href="#music" class="capsule-link" data-section="music">Music</a>
+        <a href="#portfolio" class="capsule-link" data-section="portfolio">Portfolio</a>
+        <a href="#contact" class="capsule-link" data-section="contact">Contact</a>
 
-        <div class="nav-actions">
-          <a href="#contact" class="nav-cta-btn">
-            <span>Let's Talk</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-          <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+        <!-- Mobile hamburger toggle inside capsule -->
+        <button class="capsule-hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -84,11 +70,9 @@
     <div class="drawer-links">
       <a href="#hero" class="drawer-link"><span class="nav-idx">01</span> Home</a>
       <a href="#about" class="drawer-link"><span class="nav-idx">02</span> About</a>
-      <a href="#skills" class="drawer-link"><span class="nav-idx">03</span> Tech Stack</a>
-      <a href="#education" class="drawer-link"><span class="nav-idx">04</span> Education</a>
-      <a href="#projects" class="drawer-link"><span class="nav-idx">05</span> Projects</a>
-      <a href="#certificates" class="drawer-link"><span class="nav-idx">06</span> Certificates</a>
-      <a href="#contact" class="drawer-link"><span class="nav-idx">07</span> Contact</a>
+      <a href="#music" class="drawer-link"><span class="nav-idx">03</span> Music</a>
+      <a href="#portfolio" class="drawer-link"><span class="nav-idx">04</span> Portfolio</a>
+      <a href="#contact" class="drawer-link"><span class="nav-idx">05</span> Contact</a>
     </div>
     <div class="drawer-footer">
       <div class="drawer-status">
@@ -104,63 +88,83 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Editorial Heading + 3D Interactive Lanyard) -->
     <section id="hero" class="hero-section">
       <div class="hero-container">
 
-        <!-- Left: Editorial Content -->
+        <!-- Left: Hero Content -->
         <div class="hero-content">
           <div class="hero-tagline reveal-child">
             <span class="status-indicator-dot"></span>
-            <span class="tagline-text">HELLO, I'M</span>
+            <span class="tagline-text">WELCOME TO</span>
           </div>
 
           <h1 class="hero-name reveal-child">
-            ILHAM<br />
-            <span class="name-highlight">MAULANA</span>
+            Welcome to<br />
+            <span class="name-highlight">My Portfolio</span>
           </h1>
 
           <div class="hero-subhead reveal-child">
-            <span class="role-badge">Information Systems Student</span>
-            <span class="subhead-sep">&amp;</span>
             <span class="role-badge">Web Developer</span>
+            <span class="subhead-sep">&amp;</span>
+            <span class="role-badge">Systems Architect</span>
+            <span class="subhead-sep">•</span>
+            <span class="role-badge unpam-tag">UNPAM</span>
           </div>
 
           <p class="hero-bio reveal-child">
-            I build modern digital experiences by combining technology, design, and problem solving. Focusing on robust
-            web architectures, intuitive user interfaces, and efficient software systems.
+            Berawal dari rasa penasaran, sekarang jadi passion. Saya suka bereksperimen dengan kode, mengeksplorasi
+            teknologi baru, dan mengubah ide menjadi sistem nyata yang presisi, interaktif, dan berdampak bagi pengguna.
           </p>
 
           <div class="hero-actions reveal-child">
-            <a href="#projects" class="btn btn-primary magnetic-target">
-              <span>View My Work</span>
+            <a href="#portfolio" class="btn btn-primary magnetic-target">
+              <span>Lihat Projek</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
             <a href="#contact" class="btn btn-secondary magnetic-target">
-              <span>Let's Connect</span>
+              <span>Hubungi Saya</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
             </a>
           </div>
 
-          <div class="hero-meta-strip reveal-child">
-            <div class="meta-strip-item">
-              <span class="meta-strip-label">Location</span>
-              <span class="meta-strip-value">📍 Tangerang Selatan, ID</span>
-            </div>
-            <div class="meta-strip-item">
-              <span class="meta-strip-label">University</span>
-              <span class="meta-strip-value">Universitas Pamulang</span>
-            </div>
-            <div class="meta-strip-item">
-              <span class="meta-strip-label">Major</span>
-              <span class="meta-strip-value">S1 Sistem Informasi</span>
+          <!-- FIND ME SOCIAL STRIP (Matches video) -->
+          <div class="hero-findme reveal-child">
+            <span class="findme-title">FIND ME</span>
+            <div class="findme-icons">
+              <a href="https://github.com/ilhmlna9" target="_blank" rel="noopener" class="findme-btn"
+                aria-label="GitHub" title="GitHub Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/ilhmlna.fv/" target="_blank" rel="noopener" class="findme-btn"
+                aria-label="Instagram" title="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="mailto:ilham090405@gmail.com" class="findme-btn" aria-label="Email" title="Kirim Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Right: 3D Interactive Hanging Lanyard -->
+        <!-- Right: 3D Interactive Hanging Lanyard with Wayne Tech / UNPAM Badge -->
         <div class="hero-lanyard-wrapper" id="lanyardWrapper">
 
           <!-- Ceiling Anchor Pin -->
@@ -178,7 +182,7 @@
                 <div class="strap-line left-line"></div>
                 <div class="strap-line right-line"></div>
                 <div class="strap-text-track">
-                  <span>ILHAM MAULANA • SISTEM INFORMASI • UNPAM • WEB DEVELOPER • ILHAM MAULANA • </span>
+                  <span>ILHAM MAULANA • SISTEM INFORMASI • UNPAM • FULLSTACK DEVELOPER • </span>
                 </div>
               </div>
             </div>
@@ -197,7 +201,6 @@
 
             <!-- Hanging ID Card -->
             <div class="id-card-frame" id="idCard">
-              <!-- Reinforced Top Tab with Hole locked to the carabiner hook -->
               <div class="card-hanger-tab">
                 <div class="card-clip-hole"></div>
               </div>
@@ -226,7 +229,7 @@
                 <!-- Profile Photo -->
                 <div class="card-photo-wrapper">
                   <div class="card-photo-box">
-                    <img src="assets/img/profile.png" alt="Ilham Maulana" class="card-photo" />
+                    <img src="assets/img/profile-aligned.png" alt="Ilham Maulana" class="card-photo" />
                     <div class="photo-overlay-tint"></div>
                   </div>
                   <div class="badge-status-pill">
@@ -265,8 +268,8 @@
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                   </div>
                   <div class="card-security-seal">
-                    <span class="seal-icon">✦</span>
-                    <span class="seal-text">VERIFIED</span>
+                    <span class="seal-icon">🦇</span>
+                    <span class="seal-text">WAYNE SECURE</span>
                   </div>
                 </div>
 
@@ -288,8 +291,8 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding">
+    <!-- ABOUT SECTION (Interactive BATMAN Morph Photo + Education/Experience + Stats) -->
+    <section id="about" class="section-padding about-section">
       <div class="container">
 
         <div class="section-head reveal">
@@ -297,298 +300,286 @@
           <div class="section-rule"></div>
         </div>
 
-        <div class="about-editorial-grid">
+        <!-- 3-COLUMN HERO GRID (Like the reference video!) -->
+        <div class="about-trio-grid">
 
-          <!-- Left: Editorial Photo Frame -->
-          <div class="about-photo-column reveal">
-            <div class="about-photo-card">
-              <div class="photo-frame-glow"></div>
-              <div class="photo-container">
-                <img src="assets/img/ilham.png" alt="Ilham Maulana" class="about-portrait" />
+          <!-- Left Column: Intro Name & Hubungi Saya -->
+          <div class="about-left-col reveal">
+            <div class="identity-badge">
+              <span class="identity-dot"></span>
+              <span class="identity-label" id="identityLabel">SECURITY PROFILE // ACTIVE</span>
+            </div>
+            <h3 class="about-greet">
+              Hi, I'm<br />
+              <span class="name-dynamic-glitch" id="heroNameDynamic" data-normal="Ilham Maulana"
+                data-batman="THE DARK KNIGHT">Ilham Maulana</span>
+            </h3>
+            <p class="about-role-dynamic" id="heroRoleDynamic" data-normal="Information Systems &amp; Web Developer"
+              data-batman="Gotham Vigilante &amp; Web Architect">
+              Information Systems &amp; Web Developer
+            </p>
+            <div class="about-left-actions">
+              <a href="#contact" class="btn btn-primary btn-sm magnetic-target">
+                <span>Hubungi Saya</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Center Column: BATMAN TRANSFORMATION CARD (Arahkan kursor / Hover ke foto!) -->
+          <div class="about-center-col reveal">
+            <div class="batman-morph-container" id="batmanMorphCard" tabindex="0" role="button"
+              aria-label="Arahkan kursor atau klik untuk transformasi Batman">
+
+              <!-- Subtle Gotham bat aura glow -->
+              <div class="bat-glow-aura"></div>
+
+              <!-- Viewport containing human photo and Batman layer -->
+              <div class="batman-morph-viewport">
+                <!-- Human Layer: Ilham Maulana in black Bruce Wayne suit -->
+                <img src="assets/img/profile.png" alt="Ilham Maulana" class="morph-layer morph-human" id="morphHuman" />
+
+                <!-- Batman Layer: The Dark Knight Cowl with glowing white eyes -->
+                <img src="assets/img/batman-seamless.png" alt="Batman The Dark Knight" class="morph-layer morph-batman"
+                  id="morphBatman" />
+
+                <!-- Wayne-Tech Tactical HUD Overlay -->
+                <div class="wayne-hud-overlay">
+                  <div class="hud-scanline"></div>
+                  <div class="hud-reticle"></div>
+                  <div class="hud-bracket hud-top-left"></div>
+                  <div class="hud-bracket hud-top-right"></div>
+                  <div class="hud-bracket hud-bottom-left"></div>
+                  <div class="hud-bracket hud-bottom-right"></div>
+
+                  <div class="hud-meta-header">
+                    <span class="hud-code">WAYNE-TECH // PROTOCOL-7</span>
+                    <span class="hud-target-status" id="hudTargetStatus">BIOMETRIC: DEVELOPER</span>
+                  </div>
+
+                  <!-- Glowing Bat Emblem Hologram -->
+                  <div class="hud-bat-emblem">
+                    <svg viewBox="0 0 100 55" width="46" height="26" fill="currentColor">
+                      <path
+                        d="M50 8 C46 3, 44 0, 42 0 C40 0, 39 4, 38 7 C34 4, 28 4, 20 8 C12 12, 6 18, 0 26 C4 27, 9 27, 14 25 C10 32, 11 40, 16 48 C22 45, 28 39, 31 34 C33 42, 38 48, 44 54 C46 51, 47 48, 48 44 C49 48, 51 51, 54 54 C60 48, 65 42, 67 34 C70 39, 76 45, 82 48 C87 40, 88 32, 84 25 C89 27, 94 27, 98 26 C92 18, 86 12, 78 8 C70 4, 64 4, 60 7 C59 4, 58 0, 56 0 C54 0, 52 3, 48 8 Z" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
-              <div class="about-card-badge">
-                <div class="badge-accent-line"></div>
-                <div class="badge-text-group">
-                  <strong>Ilham Maulana</strong>
-                  <span>Tangerang, 09 April 2005</span>
+
+              <!-- Interactive Alter-Ego Toggle Pill -->
+              <div class="alter-ego-toggle-wrap">
+                <button class="alter-ego-pill" id="alterEgoBtn" type="button" title="Klik untuk mengunci mode Batman">
+                  <span class="ego-bat-icon">🦇</span>
+                  <span class="ego-label" id="egoLabel">Arahkan Kursor / Hover</span>
+                  <span class="ego-pulse-dot"></span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Bio & Lihat Projek -->
+          <div class="about-right-col reveal">
+            <p class="about-right-lead">
+              Saya adalah <strong>Junior Developer</strong> yang berfokus pada pengembangan teknologi yang fungsional
+              sekaligus menarik. Saya senang memadukan kode, arsitektur sistem, dan pengalaman visual interaktif untuk
+              membangun produk digital yang berkesan.
+            </p>
+            <p class="about-right-sublead">
+              Dengan <strong>Laravel, CodeIgniter, PHP, MySQL, Tailwind CSS</strong> dan teknologi web modern, saya
+              mengubah rancangan ide menjadi solusi nyata yang responsif, terstruktur rapi, dan mudah dikembangkan.
+            </p>
+            <div class="about-right-actions">
+              <a href="#portfolio" class="btn btn-outline-glow btn-sm magnetic-target">
+                <span>&lt;/&gt; Lihat Projek</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- EDUCATION & EXPERIENCE CARDS (Exactly matching the video layout!) -->
+        <div class="about-info-deck reveal">
+
+          <!-- Education Card -->
+          <div class="deck-card education-card">
+            <div class="deck-card-top">
+              <div class="deck-icon edu-icon-wrap">🎓</div>
+              <h4 class="deck-title">Education</h4>
+            </div>
+            <div class="deck-items-list">
+              <div class="deck-item">
+                <div class="deck-item-badge unpam-pill">UNPAM</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">Universitas Pamulang</strong>
+                  <span class="item-sub">S1 Sistem Informasi · 2023 — Sekarang (Semester 7)</span>
+                </div>
+              </div>
+              <div class="deck-item">
+                <div class="deck-item-badge smk-pill">SMK</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">SMK Widya Kusuma</strong>
+                  <span class="item-sub">Teknik Komputer &amp; Jaringan (TKJ) · 2020 — 2023</span>
+                </div>
+              </div>
+              <div class="deck-item">
+                <div class="deck-item-badge smp-pill">SMP</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">SMP Nuurushshibyan</strong>
+                  <span class="item-sub">Pendidikan Menengah Pertama · 2017 — 2020</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="about-highlights-card">
-              <div class="highlight-item">
-                <span class="hl-label">Domisili</span>
-                <span class="hl-val">Serpong, Tangerang Selatan</span>
+          <!-- Experience & Domain Card -->
+          <div class="deck-card experience-card">
+            <div class="deck-card-top">
+              <div class="deck-icon exp-icon-wrap">💼</div>
+              <h4 class="deck-title">Experience &amp; Expertise</h4>
+            </div>
+            <div class="deck-items-list">
+              <div class="deck-item">
+                <div class="deck-item-badge web-pill">WEB</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">Fullstack Web Developer</strong>
+                  <span class="item-sub">Membangun sistem manajemen proyek, absensi pegawai, dan platform
+                    interaktif</span>
+                </div>
               </div>
-              <div class="highlight-item">
-                <span class="hl-label">Pendidikan</span>
-                <span class="hl-val">Universitas Pamulang (UNPAM)</span>
+              <div class="deck-item">
+                <div class="deck-item-badge cisco-pill">CISCO</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">Cisco Certified Networking</strong>
+                  <span class="item-sub">Switching, Routing, &amp; Wireless Essentials (Cisco Academy Oct 2026)</span>
+                </div>
               </div>
-              <div class="highlight-item">
-                <span class="hl-label">Fokus Bidang</span>
-                <span class="hl-val">Web Development &amp; Systems</span>
+              <div class="deck-item">
+                <div class="deck-item-badge sys-pill">SYS</div>
+                <div class="deck-item-text">
+                  <strong class="item-head">Sistem Informasi &amp; Database</strong>
+                  <span class="item-sub">Analisis sistem, perancangan relasional MySQL, &amp; integrasi API</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Right: Bio & Key Metrics -->
-          <div class="about-content-column reveal">
-            <h3 class="about-headline">
-              Membangun solusi digital dengan menggabungkan prinsip rekayasa sistem dan estetika modern.
-            </h3>
+        </div>
 
-            <p class="about-paragraph">
-              Halo! Saya <strong>Ilham Maulana</strong>, mahasiswa aktif <strong>Semester 7</strong> program studi
-              <strong>Sistem Informasi di Universitas Pamulang (UNPAM)</strong>. Berasal dari Serpong, Tangerang
-              Selatan, saya memiliki fokus mendalam dalam pengembangan aplikasi web dan arsitektur sistem informasi.
+        <!-- AUTHENTIC STAT COUNTERS (3 Projects, 3/4 Certificates, 9 Tech, 7 Semester) -->
+        <div class="about-stats-deck reveal">
+          <div class="stat-deck-card">
+            <div class="stat-deck-icon">&lt;/&gt;</div>
+            <div class="stat-deck-meta">
+              <span class="stat-deck-num" data-target="3">03</span>
+              <strong class="stat-deck-label">PROJECTS</strong>
+              <span class="stat-deck-sub">Karya yang dibuat</span>
+            </div>
+          </div>
+
+          <div class="stat-deck-card">
+            <div class="stat-deck-icon">🎖</div>
+            <div class="stat-deck-meta">
+              <span class="stat-deck-num" data-target="4">04</span>
+              <strong class="stat-deck-label">CERTIFICATES</strong>
+              <span class="stat-deck-sub">Skill yang divalidasi</span>
+            </div>
+          </div>
+
+          <div class="stat-deck-card">
+            <div class="stat-deck-icon">⚡</div>
+            <div class="stat-deck-meta">
+              <span class="stat-deck-num" data-target="9">09</span>
+              <strong class="stat-deck-label">TECH STACK</strong>
+              <span class="stat-deck-sub">Alat &amp; bahasa dikuasai</span>
+            </div>
+          </div>
+
+          <div class="stat-deck-card">
+            <div class="stat-deck-icon">🎓</div>
+            <div class="stat-deck-meta">
+              <span class="stat-deck-num" data-target="7">07</span>
+              <strong class="stat-deck-label">SEMESTER</strong>
+              <span class="stat-deck-sub">Jenjang akademik aktif</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MUSIC SECTION ("A little music. A lot of ideas." - Direct Spotify Embed Integration!) -->
+    <section id="music" class="section-padding music-section">
+      <div class="container">
+
+        <div class="music-editorial-layout">
+
+          <!-- Left: Catchy Editorial Heading & Action Buttons -->
+          <div class="music-text-side reveal">
+            <div class="music-tagline">
+              <span class="music-note-icon">🎵</span>
+              <span>DEV SOUNDTRACK // SPOTIFY LIVE</span>
+            </div>
+
+            <h2 class="music-headline">
+              A little music.<br />
+              <span class="music-gradient-text">A lot of ideas.</span>
+            </h2>
+
+            <p class="music-lead">
+              Musik yang menemani proses saya mengubah ide menjadi sesuatu yang nyata. Terhubung langsung dengan
+              <strong>Spotify</strong> secara online tanpa perlu menyimpan atau mengunduh file lagu ke folder asset.
             </p>
 
-            <p class="about-paragraph">
-              Saya selalu tertantang untuk mendalami teknologi terbaru, merancang basis data yang efisien, dan
-              mewujudkan antarmuka pengguna yang bersih, responsif, serta memberikan nilai fungsional nyata bagi
-              pengguna.
-            </p>
-
-            <!-- Focus Domains -->
-            <div class="focus-domains">
-              <span class="focus-pill"><span class="pill-dot"></span> Web Development</span>
-              <span class="focus-pill"><span class="pill-dot"></span> Information Systems</span>
-              <span class="focus-pill"><span class="pill-dot"></span> Database Architecture</span>
-              <span class="focus-pill"><span class="pill-dot"></span> Frontend &amp; Backend</span>
-              <span class="focus-pill"><span class="pill-dot"></span> Problem Solving</span>
+            <div class="music-btn-group">
+              <a href="https://open.spotify.com/playlist/0t6Ko3pdc9mTGPGSJwuJu3" target="_blank" rel="noopener"
+                class="btn btn-spotify magnetic-target" id="spotifyOpenDirectBtn">
+                <svg class="spotify-logo-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                </svg>
+                <span>Buka di Spotify ↗</span>
+              </a>
             </div>
+          </div>
 
-            <!-- Authentic Counter Stats -->
-            <div class="about-stats-grid">
-              <div class="stat-card">
-                <span class="stat-number" data-target="3">03</span>
-                <span class="stat-desc">Featured Projects</span>
+          <!-- Right: Official Spotify Embed Player in Cyber-Noir Glass Container -->
+          <div class="music-player-side reveal">
+            <div class="spotify-glass-widget" id="spotifyWidget">
+
+              <!-- Live Header: Spotify Brand & Status (Klik 2x pada status CONNECTED untuk jalan pintas pemilik web) -->
+              <div class="spotify-live-header">
+                <div class="spotify-badge-brand" id="spotifyBadgeBrand">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="#1DB954">
+                    <path
+                      d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                  </svg>
+                  <span>Spotify Direct Stream</span>
+                </div>
+                <div class="spotify-live-status" id="spotifyLiveStatus" title="Status Stream (Klik 2x)">
+                  <span class="live-dot-pulse"></span>
+                  <span id="spotifyStatusText">CONNECTED</span>
+                </div>
               </div>
-              <div class="stat-card">
-                <span class="stat-number" data-target="9">09</span>
-                <span class="stat-desc">Tech &amp; Tools Mastered</span>
+
+              <!-- Official Spotify Embed iframe (Dapat diganti oleh pemilik web langsung di src) -->
+              <div class="spotify-iframe-container">
+                <iframe id="spotifyEmbedIframe"
+                  src="https://open.spotify.com/embed/playlist/0t6Ko3pdc9mTGPGSJwuJu3?utm_source=generator&theme=0"
+                  width="100%" height="380" frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
               </div>
-              <div class="stat-card">
-                <span class="stat-number" data-target="4">04</span>
-                <span class="stat-desc">Certifications &amp; Seminars</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-number" data-target="7">07</span>
-                <span class="stat-desc">Current Semester</span>
-              </div>
-            </div>
 
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TECH STACK SECTION -->
-    <section id="skills" class="section-padding">
-      <div class="container">
-
-        <div class="section-head reveal">
-          <h2 class="section-title">Tools &amp; <span>Technologies</span></h2>
-          <div class="section-rule"></div>
-        </div>
-
-        <p class="section-lead reveal">
-          Teknologi dan perangkat lunak yang saya gunakan secara konsisten dalam merancang sistem web dari sisi
-          front-end, back-end, basis data, hingga desain antarmuka. Klik salah satu untuk membaca spesifikasi detail.
-        </p>
-
-        <div class="tech-grid">
-
-          <div class="tech-item reveal" data-tech="html5" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">HTML5</span>
-              <span class="tech-level">Advanced</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="css3" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">CSS3</span>
-              <span class="tech-level">Advanced</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="javascript" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">JavaScript</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="tailwindcss" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-                alt="Tailwind CSS" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">Tailwind CSS</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="php" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">PHP</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="laravel" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
-                alt="Laravel" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">Laravel</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="mysql" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">MySQL</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="codeigniter" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
-                alt="CodeIgniter" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">CodeIgniter</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-          <div class="tech-item reveal" data-tech="git" tabindex="0">
-            <div class="tech-icon-wrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-            </div>
-            <div class="tech-meta">
-              <span class="tech-name">Git &amp; GitHub</span>
-              <span class="tech-level">Intermediate</span>
-            </div>
-            <span class="tech-arrow">→</span>
-          </div>
-
-
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="section-padding">
-      <div class="container">
-
-        <div class="section-head reveal">
-          <h2 class="section-title">Riwayat <span>Pendidikan</span></h2>
-          <div class="section-rule"></div>
-        </div>
-
-        <div class="timeline-wrapper">
-          <div class="timeline-line"></div>
-
-          <!-- Timeline 1: UNPAM -->
-          <div class="timeline-entry reveal">
-            <div class="timeline-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-pulse"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="card-timeline-top">
-                <span class="timeline-period">2023 — Sekarang</span>
-                <span class="timeline-badge badge-active">Mahasiswa Aktif</span>
-              </div>
-              <h3 class="timeline-institution">Universitas Pamulang (UNPAM)</h3>
-              <div class="timeline-degree">S1 Sistem Informasi · Semester 7</div>
-              <p class="timeline-detail">
-                Mempelajari rekayasa perangkat lunak, perancangan basis data relasional, analisis proses bisnis,
-                manajemen sistem informasi, dan pengembangan aplikasi berbasis web.
-              </p>
-              <div class="timeline-tags">
-                <span>Rekayasa Web</span>
-                <span>Analisis Sistem</span>
-                <span>Basis Data</span>
-                <span>Tangerang Selatan</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timeline 2: SMK Widya Kusuma -->
-          <div class="timeline-entry reveal">
-            <div class="timeline-marker">
-              <div class="marker-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="card-timeline-top">
-                <span class="timeline-period">2020 — 2023</span>
-                <span class="timeline-badge badge-graduated">Lulus</span>
-              </div>
-              <h3 class="timeline-institution">SMK Widya Kusuma</h3>
-              <div class="timeline-degree">Teknik Komputer dan Jaringan (TKJ) · Cileungsi - Bogor</div>
-              <p class="timeline-detail">
-                Mendalami fondasi jaringan komputer (LAN, WAN, Mikrotik), instalasi sistem operasi, perakitan perangkat
-                keras, dan pengenalan pemrograman dasar.
-              </p>
-              <div class="timeline-tags">
-                <span>Networking</span>
-                <span>Hardware</span>
-                <span>Troubleshooting</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timeline 3: SMP Nuurushshibyan -->
-          <div class="timeline-entry reveal">
-            <div class="timeline-marker">
-              <div class="marker-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="card-timeline-top">
-                <span class="timeline-period">2017 — 2020</span>
-                <span class="timeline-badge badge-graduated">Lulus</span>
-              </div>
-              <h3 class="timeline-institution">SMP Nuurushshibyan</h3>
-              <div class="timeline-degree">Pendidikan Menengah Pertama · Cileungsi - Bogor</div>
-              <p class="timeline-detail">
-                Menyelesaikan pendidikan dasar lanjutan dengan fokus pada pengembangan karakter, akademis dasar, dan
-                eksplorasi minat di bidang teknologi komputer.
-              </p>
             </div>
           </div>
 
@@ -597,296 +588,422 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (MOBILE PROJECT COMPLETELY REMOVED) -->
-    <section id="projects" class="section-padding">
+    <!-- PORTFOLIO SECTION (Interactive Tabs: Projects, Certificates, Achievements, Tech Stack) -->
+    <section id="portfolio" class="section-padding portfolio-section">
       <div class="container">
 
         <div class="section-head reveal">
-          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <h2 class="section-title">My <span>Portfolio</span></h2>
           <div class="section-rule"></div>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="project-filters reveal">
-          <button class="filter-btn active" data-filter="all">Semua Proyek (03)</button>
-          <button class="filter-btn" data-filter="web">Web Application</button>
+        <!-- TAB NAVIGATION PILLS (Reference Video Style: Projects, Certificates, Achievements, Tech Stack) -->
+        <div class="portfolio-nav-tabs reveal" id="portfolioTabs">
+          <button class="portfolio-tab-btn active" data-tab="projects">
+            <span class="tab-icon">&lt;/&gt;</span>
+            <span class="tab-label">Projects</span>
+          </button>
+          <button class="portfolio-tab-btn" data-tab="certificates">
+            <span class="tab-icon">🎖</span>
+            <span class="tab-label">Certificates</span>
+          </button>
+          <button class="portfolio-tab-btn" data-tab="achievements">
+            <span class="tab-icon">🏆</span>
+            <span class="tab-label">Achievements</span>
+          </button>
+          <button class="portfolio-tab-btn" data-tab="techstack">
+            <span class="tab-icon">⚙</span>
+            <span class="tab-label">Tech Stack</span>
+          </button>
         </div>
 
-        <!-- Editorial Asymmetric Projects Layout -->
-        <div class="projects-editorial-grid">
+        <!-- TAB PANEL 1: PROJECTS -->
+        <div class="portfolio-tab-pane active" id="pane-projects">
+          <div class="projects-showcase-grid">
 
-          <!-- 01 FEATURED LARGE: Monitexa -->
-          <article class="project-showcase-card featured-card reveal" data-category="web">
-            <div class="showcase-visual">
-              <div class="showcase-img-wrap">
+            <!-- Project 1: Monitexa -->
+            <article class="project-card reveal">
+              <div class="project-thumb-frame">
                 <img src="assets/img/project-monitexa.svg" alt="Monitexa - Manajemen Proyek Konstruksi"
-                  class="showcase-img" />
+                  class="project-img" />
+                <div class="project-overlay-glow"></div>
+                <span class="project-badge-tag">FEATURED</span>
               </div>
-              <div class="visual-overlay"></div>
-              <div class="visual-tag">FEATURED PROJECT</div>
-            </div>
-
-            <div class="showcase-body">
-              <div class="showcase-meta-top">
-                <span class="showcase-index">01</span>
-                <span class="showcase-category">WEB APPLICATION &amp; MANAGEMENT</span>
+              <div class="project-content">
+                <div class="project-meta-row">
+                  <span class="project-num">01</span>
+                  <span class="project-category">WEB APPLICATION &amp; MANAGEMENT</span>
+                </div>
+                <h3 class="project-title">Monitexa — Manajemen Konstruksi</h3>
+                <p class="project-summary">
+                  Sistem manajemen proyek konstruksi berbasis web yang kompleks dengan multi-role access (Admin,
+                  Manager, Teknisi, Client). Menyediakan pelacakan progres fisik real-time, manajemen RAB, pengawasan
+                  material logistik, dan portal klien terintegrasi.
+                </p>
+                <div class="project-tags">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Tailwind CSS</span>
+                  <span>Livewire</span>
+                </div>
+                <div class="project-card-footer">
+                  <button class="btn btn-detail-trigger magnetic-target" data-project="monitexa">
+                    <span>Details</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                  <a href="#contact" class="project-inquire-link">Demo Inquiry ↗</a>
+                </div>
               </div>
+            </article>
 
-              <h3 class="showcase-title">Monitexa — Manajemen Konstruksi</h3>
-
-              <p class="showcase-desc">
-                Sistem manajemen proyek konstruksi berbasis web yang kompleks dengan multi-role access (Admin, Manager,
-                Teknisi, Client). Menyediakan pelacakan progres fisik real-time, manajemen RAB, pengawasan material
-                logistik, dan portal klien terintegrasi.
-              </p>
-
-              <div class="showcase-tech-pills">
-                <span class="tech-pill">Laravel</span>
-                <span class="tech-pill">PHP</span>
-                <span class="tech-pill">MySQL</span>
-                <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Livewire</span>
+            <!-- Project 2: Presensiku -->
+            <article class="project-card reveal">
+              <div class="project-thumb-frame">
+                <img src="assets/img/project-presensi.svg" alt="Sistem Presensi Presensiku" class="project-img" />
+                <div class="project-overlay-glow"></div>
               </div>
-
-              <div class="showcase-actions">
-                <button class="btn btn-detail-trigger magnetic-target" data-project="monitexa">
-                  <span>View Details &amp; Case Study</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-                <a href="#contact" class="showcase-link">Inquire Demo</a>
+              <div class="project-content">
+                <div class="project-meta-row">
+                  <span class="project-num">02</span>
+                  <span class="project-category">WEB APPLICATION</span>
+                </div>
+                <h3 class="project-title">Sistem Presensi (Presensiku)</h3>
+                <p class="project-summary">
+                  Sistem absensi pegawai berbasis web menggunakan CodeIgniter 3 dengan fitur jadwal kerja multi-shift,
+                  verifikasi geotagging lokasi, pelaporan otomatis, dan dashboard manajemen admin.
+                </p>
+                <div class="project-tags">
+                  <span>CodeIgniter 3</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Bootstrap</span>
+                </div>
+                <div class="project-card-footer">
+                  <button class="btn btn-detail-trigger magnetic-target" data-project="presensiku">
+                    <span>Details</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- 02 MEDIUM: Presensiku -->
-          <article class="project-showcase-card medium-card reveal" data-category="web">
-            <div class="showcase-visual">
-              <div class="showcase-img-wrap">
-                <img src="assets/img/project-presensi.svg" alt="Sistem Presensi Presensiku" class="showcase-img" />
-              </div>
-              <div class="visual-overlay"></div>
-            </div>
-
-            <div class="showcase-body">
-              <div class="showcase-meta-top">
-                <span class="showcase-index">02</span>
-                <span class="showcase-category">WEB APPLICATION</span>
-              </div>
-
-              <h3 class="showcase-title">Sistem Presensi (Presensiku)</h3>
-
-              <p class="showcase-desc">
-                Sistem absensi pegawai berbasis web menggunakan CodeIgniter 3 dengan fitur jadwal kerja multi-shift,
-                verifikasi geotagging lokasi, pelaporan otomatis, dan dashboard manajemen admin.
-              </p>
-
-              <div class="showcase-tech-pills">
-                <span class="tech-pill">CodeIgniter 3</span>
-                <span class="tech-pill">PHP</span>
-                <span class="tech-pill">MySQL</span>
-                <span class="tech-pill">Bootstrap</span>
-              </div>
-
-              <div class="showcase-actions">
-                <button class="btn btn-detail-trigger magnetic-target" data-project="presensiku">
-                  <span>View Details</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- 03 MEDIUM: Website Portofolio -->
-          <article class="project-showcase-card medium-card reveal" data-category="web">
-            <div class="showcase-visual">
-              <div class="showcase-img-wrap">
+            <!-- Project 3: Website Portofolio -->
+            <article class="project-card reveal">
+              <div class="project-thumb-frame">
                 <img src="assets/img/project-portfolio.svg" alt="Website Portofolio Ilham Maulana"
-                  class="showcase-img" />
+                  class="project-img" />
+                <div class="project-overlay-glow"></div>
               </div>
-              <div class="visual-overlay"></div>
+              <div class="project-content">
+                <div class="project-meta-row">
+                  <span class="project-num">03</span>
+                  <span class="project-category">INTERACTIVE WEB</span>
+                </div>
+                <h3 class="project-title">Website Portofolio Personal</h3>
+                <p class="project-summary">
+                  Website portofolio developer modern dengan rancangan dark-theme Gotham, Batman morph transformation,
+                  interactive 3D physics lanyard, custom cursor, Spotify-style music player, dan tipografi editorial.
+                </p>
+                <div class="project-tags">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>Canvas API</span>
+                  <span>Audio Engine</span>
+                </div>
+                <div class="project-card-footer">
+                  <button class="btn btn-detail-trigger magnetic-target" data-project="portfolio">
+                    <span>Details</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- TAB PANEL 2: CERTIFICATES -->
+        <div class="portfolio-tab-pane" id="pane-certificates">
+          <div class="certificates-grid">
+
+            <!-- Cert 1: Cisco CCNA -->
+            <div class="cert-item reveal" data-cert-src="assets/img/cisco-ccna.jpg"
+              data-cert-title="CCNA: Switching, Routing, and Wireless Essentials"
+              data-cert-issuer="Cisco Networking Academy — Oct 2026">
+              <div class="cert-thumb-box">
+                <img src="assets/img/cisco-ccna.jpg" alt="Sertifikat Cisco CCNA" class="cert-thumb" loading="lazy" />
+                <div class="cert-glass-hover">
+                  <span class="cert-view-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    <span>Lihat Penuh</span>
+                  </span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <span class="cert-tag">NETWORKING &amp; INFRASTRUCTURE</span>
+                <h4 class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</h4>
+                <p class="cert-org">Cisco Networking Academy · Course Completion</p>
+              </div>
             </div>
 
-            <div class="showcase-body">
-              <div class="showcase-meta-top">
-                <span class="showcase-index">03</span>
-                <span class="showcase-category">INTERACTIVE WEB</span>
+            <!-- Cert 2: SEMNAS CYBER -->
+            <div class="cert-item reveal" data-cert-src="assets/img/SEMNAS CYBER.png"
+              data-cert-title="Seminar Nasional Cybersecurity" data-cert-issuer="Universitas Pamulang — 2024">
+              <div class="cert-thumb-box">
+                <img src="assets/img/SEMNAS CYBER.png" alt="Sertifikat Seminar Nasional Cybersecurity"
+                  class="cert-thumb" loading="lazy" />
+                <div class="cert-glass-hover">
+                  <span class="cert-view-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    <span>Lihat Penuh</span>
+                  </span>
+                </div>
               </div>
-
-              <h3 class="showcase-title">Website Portofolio Personal</h3>
-
-              <p class="showcase-desc">
-                Website portofolio developer modern dengan rancangan dark-theme premium, elemen visual interactive 3D
-                physics lanyard, custom cursor, micro-interactions, dan tipografi editorial.
-              </p>
-
-              <div class="showcase-tech-pills">
-                <span class="tech-pill">HTML5</span>
-                <span class="tech-pill">CSS3</span>
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">Canvas API</span>
-              </div>
-
-              <div class="showcase-actions">
-                <button class="btn btn-detail-trigger magnetic-target" data-project="portfolio">
-                  <span>View Details</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
+              <div class="cert-info">
+                <span class="cert-tag">CYBERSECURITY</span>
+                <h4 class="cert-name">Seminar Nasional Cybersecurity</h4>
+                <p class="cert-org">Universitas Pamulang · 2024</p>
               </div>
             </div>
-          </article>
 
+            <!-- Cert 3: SEMNAS AI -->
+            <div class="cert-item reveal" data-cert-src="assets/img/SEMNAS AI.png"
+              data-cert-title="Seminar Nasional Artificial Intelligence" data-cert-issuer="Universitas Pamulang — 2024">
+              <div class="cert-thumb-box">
+                <img src="assets/img/SEMNAS AI.png" alt="Sertifikat Seminar Nasional AI" class="cert-thumb"
+                  loading="lazy" />
+                <div class="cert-glass-hover">
+                  <span class="cert-view-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    <span>Lihat Penuh</span>
+                  </span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <span class="cert-tag">ARTIFICIAL INTELLIGENCE</span>
+                <h4 class="cert-name">Seminar Nasional Artificial Intelligence</h4>
+                <p class="cert-org">Universitas Pamulang · 2024</p>
+              </div>
+            </div>
 
+            <!-- Cert 4: NATISA -->
+            <div class="cert-item reveal" data-cert-src="assets/img/NATISA.png"
+              data-cert-title="Seminar Nasional NATISA" data-cert-issuer="Universitas Pamulang — 2024">
+              <div class="cert-thumb-box">
+                <img src="assets/img/NATISA.png" alt="Sertifikat Seminar Nasional NATISA" class="cert-thumb"
+                  loading="lazy" />
+                <div class="cert-glass-hover">
+                  <span class="cert-view-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    <span>Lihat Penuh</span>
+                  </span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <span class="cert-tag">SEMINAR NASIONAL</span>
+                <h4 class="cert-name">Seminar Nasional NATISA</h4>
+                <p class="cert-org">Universitas Pamulang · 2024</p>
+              </div>
+            </div>
 
+          </div>
+        </div>
+
+        <!-- TAB PANEL 3: ACHIEVEMENTS -->
+        <div class="portfolio-tab-pane" id="pane-achievements">
+          <div class="achievements-grid">
+            <div class="achievement-card reveal">
+              <div class="achievement-icon">🎖</div>
+              <div class="achievement-body">
+                <span class="achievement-year">2026</span>
+                <h4 class="achievement-title">Cisco Certified CCNA Routing &amp; Switching</h4>
+                <p class="achievement-desc">Berhasil menyelesaikan modul pelatihan dan ujian kompetensi Switching,
+                  Routing, and Wireless Essentials di Cisco Networking Academy.</p>
+              </div>
+            </div>
+
+            <div class="achievement-card reveal">
+              <div class="achievement-icon">💡</div>
+              <div class="achievement-body">
+                <span class="achievement-year">2024</span>
+                <h4 class="achievement-title">Seminar Nasional Cybersecurity &amp; AI</h4>
+                <p class="achievement-desc">Peserta aktif seminar nasional riset keamanan siber modern dan implementasi
+                  kecerdasan buatan pada infrastruktur digital enterprise.</p>
+              </div>
+            </div>
+
+            <div class="achievement-card reveal">
+              <div class="achievement-icon">🏛</div>
+              <div class="achievement-body">
+                <span class="achievement-year">2023 — 2026</span>
+                <h4 class="achievement-title">Mahasiswa Aktif Semester 7 S1 Sistem Informasi</h4>
+                <p class="achievement-desc">Menuntaskan berbagai proyek sistem informasi akademik dan aplikasi manajemen
+                  berbasis web dengan predikat memuaskan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB PANEL 4: TECH STACK -->
+        <div class="portfolio-tab-pane" id="pane-techstack">
+          <div class="tech-grid">
+
+            <div class="tech-item reveal" data-tech="html5" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">HTML5</span>
+                <span class="tech-level">Advanced</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="css3" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">CSS3</span>
+                <span class="tech-level">Advanced</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="javascript" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">JavaScript</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="tailwindcss" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                  alt="Tailwind CSS" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">Tailwind CSS</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="php" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">PHP</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="laravel" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                  alt="Laravel" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">Laravel</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="mysql" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">MySQL</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="codeigniter" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
+                  alt="CodeIgniter" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">CodeIgniter</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+            <div class="tech-item reveal" data-tech="git" tabindex="0">
+              <div class="tech-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+              </div>
+              <div class="tech-meta">
+                <span class="tech-name">Git &amp; GitHub</span>
+                <span class="tech-level">Intermediate</span>
+              </div>
+              <span class="tech-arrow">→</span>
+            </div>
+
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- CERTIFICATES SECTION -->
-    <section id="certificates" class="section-padding">
+    <!-- CONTACT SECTION ("Hubungi Saya" - From Reference Video) -->
+    <section id="contact" class="section-padding contact-section">
       <div class="container">
 
         <div class="section-head reveal">
-          <h2 class="section-title">Sertifikat <span>&amp; Seminar</span></h2>
-          <div class="section-rule"></div>
-        </div>
-
-        <p class="section-lead reveal">
-          Sertifikasi industri dan seminar akademik yang telah saya ikuti untuk memperkuat kompetensi di bidang jaringan
-          komputer, keamanan siber, kecerdasan buatan, dan arsitektur sistem informasi. Klik kartu untuk melihat
-          sertifikat resolusi penuh.
-        </p>
-
-        <div class="certificates-editorial-grid">
-
-          <!-- Cert 1: Cisco CCNA -->
-          <div class="cert-card-item reveal" data-cert-src="assets/img/cisco-ccna.jpg"
-            data-cert-title="CCNA: Switching, Routing, and Wireless Essentials"
-            data-cert-issuer="Cisco Networking Academy — Oct 2026">
-            <div class="cert-thumbnail-wrapper">
-              <img src="assets/img/cisco-ccna.jpg"
-                alt="Sertifikat Cisco CCNA: Switching, Routing, and Wireless Essentials" class="cert-image"
-                loading="lazy" />
-              <div class="cert-hover-overlay">
-                <span class="cert-view-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                  </svg>
-                  <span>Lihat Penuh</span>
-                </span>
-              </div>
-            </div>
-            <div class="cert-caption">
-              <span class="cert-tag">NETWORKING &amp; INFRASTRUCTURE</span>
-              <h3 class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</h3>
-              <p class="cert-org">Cisco Networking Academy · Course Completion</p>
-            </div>
-          </div>
-
-          <!-- Cert 2: SEMNAS CYBER -->
-          <div class="cert-card-item reveal" data-cert-src="assets/img/SEMNAS CYBER.png"
-            data-cert-title="Seminar Nasional Cybersecurity" data-cert-issuer="Universitas Pamulang — 2024">
-            <div class="cert-thumbnail-wrapper">
-              <img src="assets/img/SEMNAS CYBER.png" alt="Sertifikat Seminar Nasional Cybersecurity" class="cert-image"
-                loading="lazy" />
-              <div class="cert-hover-overlay">
-                <span class="cert-view-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                  </svg>
-                  <span>Lihat Penuh</span>
-                </span>
-              </div>
-            </div>
-            <div class="cert-caption">
-              <span class="cert-tag">CYBERSECURITY</span>
-              <h3 class="cert-name">Seminar Nasional Cybersecurity</h3>
-              <p class="cert-org">Universitas Pamulang · 2024</p>
-            </div>
-          </div>
-
-          <!-- Cert 3: SEMNAS AI -->
-          <div class="cert-card-item reveal" data-cert-src="assets/img/SEMNAS AI.png"
-            data-cert-title="Seminar Nasional Artificial Intelligence" data-cert-issuer="Universitas Pamulang — 2024">
-            <div class="cert-thumbnail-wrapper">
-              <img src="assets/img/SEMNAS AI.png" alt="Sertifikat Seminar Nasional Artificial Intelligence"
-                class="cert-image" loading="lazy" />
-              <div class="cert-hover-overlay">
-                <span class="cert-view-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                  </svg>
-                  <span>Lihat Penuh</span>
-                </span>
-              </div>
-            </div>
-            <div class="cert-caption">
-              <span class="cert-tag">ARTIFICIAL INTELLIGENCE</span>
-              <h3 class="cert-name">Seminar Nasional Artificial Intelligence</h3>
-              <p class="cert-org">Universitas Pamulang · 2024</p>
-            </div>
-          </div>
-
-          <!-- Cert 4: NATISA -->
-          <div class="cert-card-item reveal" data-cert-src="assets/img/NATISA.png"
-            data-cert-title="Seminar Nasional NATISA" data-cert-issuer="Universitas Pamulang — 2024">
-            <div class="cert-thumbnail-wrapper">
-              <img src="assets/img/NATISA.png" alt="Sertifikat Seminar Nasional NATISA" class="cert-image"
-                loading="lazy" />
-              <div class="cert-hover-overlay">
-                <span class="cert-view-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                  </svg>
-                  <span>Lihat Penuh</span>
-                </span>
-              </div>
-            </div>
-            <div class="cert-caption">
-              <span class="cert-tag">SEMINAR NASIONAL</span>
-              <h3 class="cert-name">Seminar Nasional NATISA</h3>
-              <p class="cert-org">Universitas Pamulang · 2024</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section-padding">
-      <div class="container">
-
-        <div class="section-head reveal">
-          <h2 class="section-title">Let's Build <span>Something.</span></h2>
+          <h2 class="section-title">Hubungi <span>Saya</span></h2>
           <div class="section-rule"></div>
         </div>
 
         <div class="contact-editorial-layout">
 
-          <!-- Left: Personal Pitch & Direct Connections -->
+          <!-- Left: Direct Channels & Personal Statement -->
           <div class="contact-details-box reveal">
             <h3 class="contact-big-statement">
               Tertarik mendiskusikan peluang proyek, sistem web, atau kolaborasi?
@@ -1016,8 +1133,8 @@
         <div class="footer-brand">
           <span class="footer-logo">ILHAM<span class="logo-accent">.</span></span>
           <p class="footer-bio">
-            Mahasiswa Sistem Informasi Universitas Pamulang &amp; Web Developer. Merancang antarmuka presisi dan sistem
-            perangkat lunak yang fungsional.
+            Mahasiswa Sistem Informasi Universitas Pamulang &amp; Web Developer. Merancang antarmuka presisi,
+            interaktivitas modern, dan sistem perangkat lunak yang fungsional.
           </p>
           <div class="footer-status-pill">
             <span class="status-indicator-dot"></span> Available for opportunities
@@ -1029,10 +1146,8 @@
           <ul class="footer-nav-list">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Tech Stack</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -1049,7 +1164,7 @@
 
       <div class="footer-bottom">
         <p class="footer-copy">
-          © 2026 Ilham Maulana. All rights reserved. Built with semantic standards and crafted animations.
+          © 2026 Ilham Maulana. All rights reserved. The Dark Knight Portfolio Edition.
         </p>
         <p class="footer-loc">Serpong, Tangerang Selatan — Indonesia</p>
       </div>
@@ -1065,6 +1180,60 @@
 
   <!-- TOAST NOTIFICATIONS -->
   <div class="toast-container" id="toastContainer"></div>
+
+  <!-- SPOTIFY PLAYLIST MODAL ("Hubungkan Playlist Spotify Anda") -->
+  <div class="modal-backdrop" id="musicGuideModal" role="dialog" aria-modal="true" aria-labelledby="musicGuideTitle">
+    <div class="modal-card modal-card-compact">
+      <button class="modal-close-btn" id="closeMusicGuideModal" aria-label="Close modal">✕</button>
+
+      <div class="modal-nav-bar">
+        <span class="modal-crumb">Spotify Integration &gt; Ganti Playlist / Lagu</span>
+      </div>
+
+      <div class="modal-scroll-body">
+        <div class="guide-modal-inner">
+          <div class="guide-modal-icon">🎧</div>
+          <h3 id="musicGuideTitle" class="guide-modal-title">Hubungkan Spotify Anda</h3>
+          <p class="guide-modal-desc">
+            Sematkan playlist, album, atau lagu favorit pilihan Anda langsung dari <strong>Spotify resmi</strong>. Tidak
+            perlu download atau simpan file audio apa pun ke asset!
+          </p>
+
+          <!-- Input form -->
+          <div class="spotify-input-box">
+            <label for="spotifyUrlInput" class="spotify-input-label">Tautan / Link Spotify (Playlist, Lagu, atau
+              Album):</label>
+            <div class="spotify-input-row">
+              <input type="text" id="spotifyUrlInput" class="spotify-text-input"
+                placeholder="Contoh: https://open.spotify.com/playlist/... atau track/..." autocomplete="off" />
+              <button type="button" class="btn btn-primary btn-sm" id="applySpotifyBtn">
+                <span>Terapkan</span>
+              </button>
+            </div>
+            <p class="spotify-input-help">Mendukung link Playlist, Track (Lagu), Album, mau pun Spotify URI.</p>
+          </div>
+
+          <div class="guide-steps-wrapper">
+            <h4 class="guide-steps-heading">Cara mengambil link dari Spotify:</h4>
+            <ol class="guide-steps-list">
+              <li>Buka aplikasi Spotify (di HP atau Komputer) atau lewat web browser.</li>
+              <li>Pilih playlist atau lagu favorit yang ingin dipasang.</li>
+              <li>Klik ikon titik tiga (•••) atau tombol <strong>Bagikan (Share)</strong> &rarr; pilih <strong>Salin
+                  Tautan (Copy Link)</strong>.</li>
+              <li>Tempelkan tautan tersebut di kolom di atas, lalu klik <strong>Terapkan</strong>.</li>
+            </ol>
+          </div>
+
+          <div class="guide-actions-footer">
+            <button type="button" class="btn btn-outline-glow btn-sm" id="resetSpotifyDefaultBtn">
+              <span>Kembalikan ke Default</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- PROJECT DETAIL MODAL -->
   <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
